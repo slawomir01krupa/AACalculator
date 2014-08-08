@@ -13,6 +13,19 @@ namespace AACalculator.UI
     {
 
         #region fields and properties
+        private bool _isUserControlVisible;
+
+        public bool IsUserControlVisible
+        {
+            get { return _isUserControlVisible; }
+            set 
+            { 
+                _isUserControlVisible = value;
+                this.RaisePropertyChanged(() => IsUserControlVisible);
+            }
+        }
+
+
         private readonly StartScreen _view;
         private string _labelContent;
 
@@ -32,6 +45,7 @@ namespace AACalculator.UI
 
         public StartScreenViewModel()
         {
+            IsUserControlVisible = false;
             LabelContent = "Hello form ";
 
             _view = new StartScreen { DataContext = this };
@@ -55,6 +69,8 @@ namespace AACalculator.UI
         private void Menu1PressedExecute()
         {
             LabelContent = "Menu BTN 1 Was Pressed";
+            IsUserControlVisible = !IsUserControlVisible;
+            
         }
 
 

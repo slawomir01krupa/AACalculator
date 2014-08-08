@@ -1,6 +1,7 @@
 ﻿<Application x:Class="AACalculator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Core="clr-namespace:AACalculator.Core" 
              Startup="BootStrapper">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,6 +12,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+
+            <Core:BoolToVisibilityConverter x:Key="BoolToVisisbility" />
+        </ResourceDictionary>        
     </Application.Resources>
 </Application>

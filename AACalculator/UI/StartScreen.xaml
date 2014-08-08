@@ -29,7 +29,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="{Binding LabelContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <UserControls:Content1UserControl Grid.Row="1">
+            <UserControls:Content1UserControl Grid.Row="1" Visibility="{Binding IsUserControlVisible, Converter={StaticResource ResourceKey=BoolToVisisbility}}">
             </UserControls:Content1UserControl>
         </Grid>
         
